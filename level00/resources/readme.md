@@ -1,7 +1,7 @@
 # Level 00
 
 ```
-$ find / -user flag00 2 > /dev/null
+$ find / -user flag00 2> /dev/null
 $ cat /usr/sbin/john
 cdiiddwpgswtgt
 ```
