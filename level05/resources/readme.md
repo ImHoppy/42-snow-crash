@@ -18,7 +18,7 @@ done
 ```
 Ce script lit tous les fichiers présents dans le dossier `/opt/openarenaserver` et les lances avec bash puis les supprime.
 
-On fait petit script qui va print sur tous les terminaux le flag
+On fait petit script qui va print sur tous les terminaux le flag et attendre le cron
 ```
 $ echo "getflag | wall" > /opt/openarenaserver/flagIsMine
 ```
