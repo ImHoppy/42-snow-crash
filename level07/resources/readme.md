@@ -11,9 +11,9 @@ d--x--x--x 1 root    users    340 Aug 30  2015 ..
 -rwsr-sr-x 1 flag07  level07 8805 Mar  5  2016 level07
 -r-x------ 1 level07 level07  675 Apr  3  2012 .profile
 ```
-On peut appercevoir un executable. Si on l'execute il nous ecrit seulement `level07`.
+On peut apercevoir un exécutable. Si on l'exécute il nous écrit seulement `level07`.
 
-En tout premier avant de peut etre le decompilé, on peut lancer `strings` dessus.
+En tout premier avant de peu être le décompiler, on peut lancer `strings` dessus
 ```
 $ strings ./level07
 /lib/ld-linux.so.2
@@ -30,13 +30,13 @@ LOGNAME
 /bin/echo %s
 ...
 ```
-Pleins de chose interresant ce montre à nous, comme les fonctions ou meme les strings utilisé.
-Comme les fonctions `getenv`, `system`, `asprintf`. Ce qui voudrait dire que l'executable fait appeler à une variable d'envirionement, execute peut etre `/bin/echo %s` et le pourcentage %s comme une valeur dynamique set via le asprintf ?
+Pleins de chose intéressant se montre à nous, comme les fonctions ou même les strings utilisés.
+Comme les fonctions `getenv`, `system`, `asprintf`. Ce qui voudrait dire que l'exécutable fait appeler à une variable d'environnement, exécute peut-être `/bin/echo %s` et le pourcentage `%s` comme une valeur dynamique set via l'asprintf ?
 
-Testons des trucs
-- en premier lieu, le string LOGNAME est t'il la variable d'env ?
-- Et si on modifier cette variable
-- Grace à la fonction system, on pourrait executer autre chose que /bin/echo
+Mettons nos infos au test :
+- Dans un premier temps, le string `LOGNAME` est-elle la variable env?
+- Et si nous changeons la variable.
+- Grâce à la fonction system, on pourrait exécuter autre chose que `/bin/echo`
 ```sh
 $ echo $LOGNAME
 level07
