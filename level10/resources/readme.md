@@ -36,8 +36,6 @@ On recoit bien le contenu du fichier `/tmp/toto` qui est: `Hello`.
 $ strace ./level10 /tmp/toto 127.0.0.1
 ...
 access("/tmp/toto", R_OK)               = 0
-fstat64(1, {st_mode=S_IFCHR|0620, st_rdev=makedev(136, 0), ...}) = 0
-mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb7fda000
 write(1, "Connecting to 127.0.0.1:6969 .. ", 32Connecting to 127.0.0.1:6969 .. ) = 32
 socket(PF_INET, SOCK_STREAM, IPPROTO_IP) = 3
 connect(3, {sa_family=AF_INET, sin_port=htons(6969), sin_addr=inet_addr("127.0.0.1")}, 16) = 0
@@ -53,4 +51,4 @@ write(3, "Hello\n", 6Hello
 write(1, "wrote file!\n", 12wrote file!
 )           = 12
 ```
-Lors du strace de l'executable, on voit qu'il essaye d'`access` sur le fichier avant de l'ouvrir et de se connecter. On pourrait peut être faire une [Race condition](https://en.wikipedia.org/wiki/Race_condition) ?
+Lors du strace de l'executable, on voit qu'il essaye d'`access` sur le fichier avec la permision `READ` avant de l'ouvrir et de se connecter. On pourrait peut être faire une [Race condition](https://en.wikipedia.org/wiki/Race_condition) ?
