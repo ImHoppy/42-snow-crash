@@ -6,13 +6,13 @@ $ ls -l
 total 8
 -rwsr-sr-x 1 flag13 level13 7303 Aug 30  2015 level13
 ```
-Quand on execute level13, il nous dit qu'on peut le lancer seulement avec l'utilisateur avec UID 4242.
+Quand on exécute level13, il nous dit qu'on peut le lancer seulement avec l'utilisateur avec UID 4242.
 
-On a deux posibilité de le bypass, créer un utilisateur et lui definir l'UID 4242. Ou alors modifier l'assembly et et la condition.
+On a deux possibilités de le bypass, créer un utilisateur et lui définir l'UID 4242. Ou alors modifier l'assembly et la condition.
 
-On va faire la plus compliqué, vu que sur mon ordinateur je n'ai pas les droits de crée un utilisateur.
+On va faire la plus compliquée, vu que sur mon ordinateur je n'ai pas les droits de créer un utilisateur.
 
-En regardant l'assembly du program, on voit des appel à `getuid` et directement après une comparaison avec la valeur `0x1092` qui est `4242` en decimal.
+En regardant l'assembly du program, on voit des appels à `getuid` et directement après une comparaison avec la valeur `0x1092` qui est `4242` en décimal.
 ```
 $ objdump -d level13
 
