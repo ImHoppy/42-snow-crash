@@ -12,7 +12,8 @@ On a deux possibilités de le bypass, créer un utilisateur et lui définir l'UI
 
 On va faire la plus compliquée, vu que sur mon ordinateur je n'ai pas les droits de créer un utilisateur.
 
-En regardant l'assembly du program, on voit des appels à `getuid` et directement après une comparaison avec la valeur `0x1092` qui est `4242` en décimal.
+En regardant l'assembly du program, on voit des appels à `getuid` (`0x8048595`) et directement après une comparaison avec la valeur `0x1092` (`0x804859a`) qui est `4242` en décimal.</br>
+t si l'uid == 4242, on va directement appeler la fonction `ft des` et sinon appeler `exit`.
 ```
 $ objdump -d level13
 
@@ -48,3 +49,9 @@ Disassembly of section .init:
  80485e9:	c3                   	ret
 ...
 ```
+
+On pourrait inverse la condition pour que ça `exit` seulement si l'uid est égal à 4242. Pour ce faire on peut utiliser in logiciel comme ghidra pour patch, mais dans cette example je vais utiliser `vim` et `xxd`.
+
+On va ouvrir le fichier dans `vim` et le convertir en hex en executant la commande vim `:%!xxd`.
+Puis trouver la ligne du jump `74 2a` et changer le `74` vers `75` pour passer en `jne`.<br/>
+Et je peut le retourner en binaire avec `:%!xxd -r` et le sauvegarder dans tmp `:w /tmp/test`.
