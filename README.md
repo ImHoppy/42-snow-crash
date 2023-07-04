@@ -12,6 +12,7 @@ La liste des outils et commandes utilisé:
  - john
  - ghidra
  - wireshark
+ - vim
  - gdb
  - ptrace
  - nm
