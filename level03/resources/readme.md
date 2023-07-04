@@ -1,9 +1,9 @@
 # Level 03
 
-Dans le home on peut apercevoir un executable, que lorsqu'on le lance, nous ecrit dans le terminal: `Exploit me`.
+Dans le home on peut apercevoir un exécutable, que lorsqu'on le lance, nous ecrit dans le terminal: `Exploit me`.
 
-La première chose qu'on pense c'est de voir comment est construit cet executable.
-Et pour ce faire, on lance gdb avec l'executable comme argument.
+La première chose qu'on pense c'est de voir comment est construit cet exécutable.
+Et pour ce faire, on lance gdb avec l'exécutable comme argument.
 
 Ensuite désassembler l'entry point.
 
@@ -26,9 +26,9 @@ Donc on va regarder cette position:
 0x80485e0:	 "/usr/bin/env echo Exploit me"
 (gdb)
 ```
-On voit donc que l'argument de system est `"/usr/bin/env echo Exploit me"`. Ce qui nous fait penser qu'on pourrait mettre un faux executable echo.
+On voit donc que l'argument de system est `"/usr/bin/env echo Exploit me"`. Ce qui nous fait penser qu'on pourrait mettre un faux exécutable echo.
 
-Pour ce faire on va créer le script/executable, qu'on va mettre dans /tmp/echo, lui donner les bonnes permissions et un path directement sur /tmp
+Pour ce faire on va créer le script/exécutable, qu'on va mettre dans /tmp/echo, lui donner les bonnes permissions et un path directement sur /tmp
 
 ```
 $ echo "sh -c getflag" > /tmp/echo

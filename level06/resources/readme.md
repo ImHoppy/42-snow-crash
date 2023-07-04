@@ -12,7 +12,7 @@ d--x--x--x  1 root    users    340 Aug 30  2015 ..
 -r-x------  1 level06 level06  675 Apr  3  2012 .profile
 ```
 
-L'executable level06 sert juste à lancer /bin/php avec les bonnes permissions et prend deux paramètre optionel.
+L'exécutable level06 sert juste à lancer /bin/php avec les bonnes permissions et prend deux paramètre optionel.
 
 Mais le plus interresant est le fichier level06.php qui nous montre une petite faille de sécurité à cause d'eval sur la ligne 11 (flag `/e`).
 ```php

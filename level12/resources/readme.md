@@ -9,7 +9,7 @@ total 4
 
 Comme le script dans level 04, le script récupère les paramètres `x` et `y` d'une requête HTTP, exécute la commande système `egrep` pour rechercher dans le fichier `/tmp/xd` en utilisant la valeur de `x` en ayant mis toutes les lettres en majuscules avant, puis affiche des points en fonction des résultats de la recherche et de la valeur de `y`. Le nombre de points affichés dépend de la correspondance trouvée et de la valeur de `y`.
 
-Ce qui voudrait dire qu'on pourrait executer n'importe quel commandes via le paramètre `x`.
+Ce qui voudrait dire qu'on pourrait exécuter n'importe quel commandes via le paramètre `x`.
 
 On pourrait tous simplement essayer: `curl localhost:4646/level12.pl?x='${getflag}'`, mais on va que le script va rendre le paramètre X tous en maj. Donc ce qui nous fait `${GETFLAG}` et la commande `GETFLAG` n'existe pas. Alors ce qui faudrait faire c'est le créer.
 

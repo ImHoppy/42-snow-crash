@@ -18,7 +18,7 @@ On voit qu'on a la permission de lire le fichier `token`.
 $ cat token
 f4kmm6p|=�p�n��DB�Du{��
 ```
-Ça ne ressemble pas à un token valide. Peut être qu'on peut avoir plus d'info avec l'executable level09 ?
+Ça ne ressemble pas à un token valide. Peut être qu'on peut avoir plus d'info avec l'exécutable level09 ?
 
 ```
 $ ./level09
@@ -28,7 +28,7 @@ abcdefgh
 ```
 On a bien l'impression que notre argument se fait incrementer par rapport à sa position dans le string ?
 
-Et si on faisait l'inverse, voici un petit executable en c pour soustraire par son index.
+Et si on faisait l'inverse, voici un petit exécutable en c pour soustraire par son index.
 ```
 $ chmod +w .
 $ gcc -xc -std=c99 - <<< 'main(int c, char **av){for (int i=0; av[1][i]; i++){printf("%c", av[1][i]-i);}}'

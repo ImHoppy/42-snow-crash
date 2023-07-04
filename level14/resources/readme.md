@@ -17,7 +17,7 @@ Sur l'image en dessous, on a entouré deux blocs intéressants et importants.
 Et la suite du programme une forêt de if, entre l'uid de l'exécuteur et d'autres uid.<br/>
 Chaque condition a une liste de caractères passé à `ft_des` puis print le retour de celle-ci dans la stdout.
 
-![Decompile version of getflag executable in ghidra](./getflag_ghidra.png)
+![Decompile version of getflag exécutable in ghidra](./getflag_ghidra.png)
 
 La suite va se passer dans gdb, pour pouvoir modifier la valeur de retour de `ptrace` et `getuid`.
 

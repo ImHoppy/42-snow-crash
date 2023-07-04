@@ -13,7 +13,7 @@ d--x--x--x  1 root    users     340 Aug 30  2015 ..
 $./level10 file host
 	sends file to host if you have access to it
 ```
-L'executable nous demandes un fichier avec des accès dessus et une ip ?
+L'exécutable nous demandes un fichier avec des accès dessus et une ip ?
 ```
 ./level10 token 127.0.0.1
 You don't have access to token
@@ -51,14 +51,14 @@ write(3, "Hello\n", 6Hello
 write(1, "wrote file!\n", 12wrote file!
 )           = 12
 ```
-Lors du strace de l'executable, on voit qu'il essaye d'`access` sur le fichier avec la permission `READ` avant de l'ouvrir et de se connecter. On pourrait peut être faire une [Race condition](https://en.wikipedia.org/wiki/Race_condition) ?
+Lors du strace de l'exécutable, on voit qu'il essaye d'`access` sur le fichier avec la permission `READ` avant de l'ouvrir et de se connecter. On pourrait peut être faire une [Race condition](https://en.wikipedia.org/wiki/Race_condition) ?
 
 Donc pour ce faire, il faudrait lancer le programme avec comme fichier `toto` dont on a les permissions de `read` puis sur la miliseconde plus tard après l'execution d'`access` changer le fichier `toto` par un autre fichier dont on n'a pas la permission de lire comme le `token`. On peut le faire grace au `softlink`.
 
 Et pour avoir le plus de chance possible on va lancer le programme à l'infini.
 
 On lance `tmux` ou tous simplement 3 instance `ssh`.
-- Une qui va executer le programme à l'infini
+- Une qui va exécuter le programme à l'infini
 - Une qui va juste listen sur le port `6969`
 - Et la dernière qui va link sur un fichier puis attendre une milisecond et relink sur `token`.
 
