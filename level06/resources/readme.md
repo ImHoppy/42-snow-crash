@@ -42,7 +42,7 @@ Ligne 9-15 : La fonction x($y, $z) est définie. Elle prend deux paramètres, $y
 
 ```
 
-Selon le doc des [String interpolation](https://wiki.php.net/rfc/deprecate_dollar_brace_string_interpolation), elle nous dit qu'on peut exécuter des fonctions que contient une variable.</Br>
+Selon le doc des [String interpolation](https://wiki.php.net/rfc/deprecate_dollar_brace_string_interpolation), elle nous dit qu'on peut exécuter des fonctions que contiennent une variable.</Br>
 Donc on a supposé qu'on pouvait exécuter n'importe quelle fonction contenue dans le variable `z` de la fonction `x`.
 
 Voici le premier argument qu'on donne à l'exécutable `[x {$z(getflag)}]`, celle-ci récupère le contenu de `z` et exécute la avec comme argument `getflag` et comme deuxième argument la fonction qu'on veut `system`.

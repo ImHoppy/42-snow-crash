@@ -30,10 +30,10 @@ LOGNAME
 /bin/echo %s
 ...
 ```
-Pleins de chose intéressant se montre à nous, comme les fonctions ou même les strings utilisés.
+Plein de choses intéressantes se montre à nous, comme les fonctions ou même les strings utilisés.
 Comme les fonctions `getenv`, `system`, `asprintf`. Ce qui voudrait dire que l'exécutable fait appeler à une variable d'environnement, exécute peut-être `/bin/echo %s` et le pourcentage `%s` comme une valeur dynamique set via l'asprintf ?
 
-Mettons nos infos au test :
+Mettons nos infos au test:
 - Dans un premier temps, le string `LOGNAME` est-elle la variable env?
 - Et si nous changeons la variable.
 - Grâce à la fonction system, on pourrait exécuter autre chose que `/bin/echo`

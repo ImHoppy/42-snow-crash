@@ -6,7 +6,7 @@ $ ls -l
 total 4
 -rwsr-sr-x 1 flag11 level11 668 Mar  5  2016 level11.lua
 ```
-Le script lua, va ecouter sur le port `5151` et demande un mot de passe mais le plus important c'est la fonction de hash pour le mot de passe. On voit qu'il utilise `popen` de lib io. Ce que fait `popen` est de tous simplement executer le premier paramètre dans bash (Comme dans `system()`).
+Le script lua, va ecouter sur le port `5151` et demande un mot de passe mais le plus important c'est la fonction de hash pour le mot de passe. On voit qu'il utilise `popen` de lib io. Ce que fait `popen`, est de tout simplement executer le premier paramètre dans bash (Comme dans `system()`).
 <br/>
 Ce qui voudrait dire qu'on pourrait executer n'importe quel commande via le paramètre pass de la fonction `hash`.
 ```lua

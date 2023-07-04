@@ -6,23 +6,23 @@ $ ls -l
 total 0
 $ find / -user flag14 2>/dev/null
 ```
-Mince, on ne trouve rien que très intéressant, ni dans le home, ni un fichier avec des permission. Rien dans le `/etc/passwd` à crack. <br/>
-Vu du dernier level, qui nous introduit au disassemble, pourrait t'on disassemble le getflag ?
+Mince, on ne trouve rien de très intéressant, ni dans le home, ni un fichier avec des permissions. Rien dans le `/etc/passwd` à crack. <br/>
+Vu du dernier level, qui nous introduit a désassembler, pourrait t'on désassembler le getflag ?
 
-En ouvrant le program `getflag` dans ghidra, on récupère une version approximative du C<br/>
-Sur l'image en dessous, on a entouré deux blocs intéressant et important.
-- Le premier nous met un message d'erreur si on `trace` nous retourne `-1`.
-- Le deuxième qui choppe le `getuid`.
+En ouvrant le programme `getflag` dans ghidra, on récupère une version approximative du C<br/>
+Sur l'image en dessous, on a entouré deux blocs intéressants et importants.
+- Le premier nous met un message d'erreur si `ptrace` nous retourne `-1`.
+- Le deuxième qui récupere le UID courant de l'utilisateur éxecutant le programme `getuid`.
 
-Et la suite du program une forêt d'if, entre l'uid de l'exécuteur et d'autres uid.<br/>
-Chaque condition a une liste de caractère passé à `ft_des` puis print le retour de celle-ci dans la stdout.
+Et la suite du programme une forêt de if, entre l'uid de l'exécuteur et d'autres uid.<br/>
+Chaque condition a une liste de caractères passé à `ft_des` puis print le retour de celle-ci dans la stdout.
 
 ![Decompile version of getflag executable in ghidra](./getflag_ghidra.png)
 
 La suite va se passer dans gdb, pour pouvoir modifier la valeur de retour de `ptrace` et `getuid`.
 
-Avant de lancer le programme, on met nos breakpoint, et pour chaque breakpoint on va avancer d'une ligne via la commande `s` et si on print la valeur de retour qui est dans le register $eax, on voit bien le `-1` de `ptrace`.<br/>
-Alors tous simplement on change ce `-1` en `0` et continue jusqu'à `getuid` et refaire la même chose, en changeant le `2014` par `3014` qui est l'uid de l'utilisateur `flag14` (Trouvé via `cat /etc/passwd`)
+Avant de lancer le programme, on met nos breakpoint, et pour chaque breakpoint on va avancer d'une ligne via la commande `s` et si on print la valeur de retour qui est dans le registre $eax, on voit bien le `-1` de `ptrace`.<br/>
+Alors tout simplement, on change ce `-1` en `0` et continue jusqu'à `getuid` pour refaire la même chose, en changeant le `2014` par `3014` qui est l'uid de l'utilisateur `flag14` (Trouvé via `cat /etc/passwd`)
 ```
 $ gdb /bin/getflag
 (gdb) b ptrace

@@ -26,7 +26,7 @@ You need to provied only one arg.
 $ ./level09 aaaaaaaa
 abcdefgh
 ```
-Bien l'impression que notre argument se fait incrementé par rapport à sa position dans le string ?
+On a bien l'impression que notre argument se fait incrementer par rapport à sa position dans le string ?
 
 Et si on faisait l'inverse, voici un petit executable en c pour soustraire par son index.
 ```

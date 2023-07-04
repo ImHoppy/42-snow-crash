@@ -7,9 +7,9 @@ $ find / -user flag00 2> /dev/null
 $ cat /usr/sbin/john
 cdiiddwpgswtgt
 ```
-Mais ce code ne correspondais pas au password de `flag00`.
+Mais ce code ne correspondait pas au password de `flag00`.
 
-Mais on a pu decouvrir que ce code étais un code de [César](https://www.dcode.fr/chiffre-cesar), et ce qui nous donne `nottoohardhere` pour l'user `flag00`
+Mais on a pu decouvrir que ce code était un code de [César](https://www.dcode.fr/chiffre-cesar), et ce qui nous donne `nottoohardhere` pour l'user `flag00`
 ````
 $ su flag00
 Password: nottoohardhere
