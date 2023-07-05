@@ -40,7 +40,7 @@ Unable to read fd %d
 ```
 On voit bien la fonction `strstr` qui permet de trouver une chaine de caractère dans une autre.
 
-Et si tous simplement on renomme le fichier `token` . Mais on n'a pas la permission dans le dossier pour écrire alors qu'il est à notre nom. Alors on modifie la permission.
+Et si tous simplement on renomme le fichier `token` ? Nous avons d'abord besoin des droits d'écriture dans le dossier actuel, nous modifions donc la permission.
 ```
 $ mv token pass
 mv: cannot move `token' to `pass': Permission denied
