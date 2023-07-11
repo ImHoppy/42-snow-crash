@@ -1,14 +1,14 @@
 # Snow Crash
 
-## Faut faire quoi?
+## Que faut t'il faire?
 Ce projet vise à nous faire découvrir, à travers plusieurs petits défis, la cybersécurité dans divers domaines.
 
 Chaque défi est representé via un utilisateur allant de level00 jusqu'à level14. Chaque level contient une clé caché qui nous donne accès au level suivant, soit dans un fichier où on n'a pas les droit. Ou soit un programme avec une faille.
 
-## L'environement et les outils utilisé
-L'environement où se situe les levels est une vm, disponible via ssh. Mon ordi de travail est ceux disponible à l'Ecole 42 Paris sur Ubuntu
+## L'environnement et les outils utilisés
+L'environnement où se situe les levels est une vm, disponible via ssh. Mon ordinateur de travail est ceux disponible à l'Ecole 42 Paris sur Ubuntu
 
-La liste des outils et commandes utilisé:
+La liste des outils et commandes utilisés:
  - john
  - ghidra
  - wireshark
@@ -19,7 +19,7 @@ La liste des outils et commandes utilisé:
  - netstat
  - objdump
 
-## Listes des levels
+## Liste des levels
 - [**level00**](level00/resources/readme.md): Recherche de programme caché et introduction à la cryptographie
 - [**level01**](level01/resources/readme.md): Découvrir la gestion de mot de passe et d'utilisateur sur unix
 - [**level02**](level02/resources/readme.md): Découverte du logiciel wireshark.
